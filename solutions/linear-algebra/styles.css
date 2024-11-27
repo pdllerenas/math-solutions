@@ -1,0 +1,40 @@
+.proof {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px 0;
+  position: relative;
+  width: auto;
+  overflow-x: auto;
+}
+
+.problem-container {
+  margin-bottom: 5rem;
+}
+
+.proof-title {
+  font-weight: bold;
+}
+
+.qed {
+  position: absolute;
+  right: 20px;
+}
+
+main {
+  padding: 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.split {
+  display: flex;
+  justify-content: space-around;
+}
+
+.python {
+  background-color: #222 !important;
+  color: #fff !important;
+}

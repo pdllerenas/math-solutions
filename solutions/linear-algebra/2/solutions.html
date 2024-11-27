@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+  <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+    };
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+
+</head>
+<body>  
+  <header>
+    <h1>
+      Solutions to some of the exercises in Sheldon Axler's <i>Linear Algebra Done Right</i> (4th edition).
+    </h1>
+  </header>
+  <main>
+    <h2>Chapter 2</h2>
+    <section class="problem-container">
+      <p>
+        <strong>1.</strong> 
+        Prove that $-(-v) = v$ for all $v \in V$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            From 1.32 we know that $-v = (-1)v$, so 
+            \[
+              \begin{align*}
+                  -(-v) &= (-1)[(-1)v] \\
+                  &= [(-1)(-1)]v \\
+                  &= 1v\\
+                  &= v.
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section>
+    </section>
+    
+    <section class="problem-container">
+      <p>
+        <strong>2.</strong> 
+        Suppose $a\in \mathbb{F}$, $v \in V$, and $av = 0$. Prove that $a = 0$ or $v = 0$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Assume $a \neq 0$ and $v \neq 0$. Then $1/a \in \mathbb{F}$, so that
+            \[
+              \begin{align*}
+                  v &= 1v \\
+                  &= (1/a \cdot a )v \\
+                  &= \frac{1}{a}(av) \\
+                  &= \frac{1}{a}(0) \\
+                  &= 0.
+              \end{align*}
+            \]
+            Which is a contradiction. Thus, $a = 0$ or $v = 0$.
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

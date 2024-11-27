@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+  <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+    };
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>  
+  <header>
+    <h1>
+      Solutions to some of the exercises in <a href="https://linear.axler.net/LADR4e.pdf">Sheldon Axler's <i>Linear Algebra Done Right</i> (4th edition)</a>.
+    </h1>
+  </header>
+  <main>
+    <h2>Chapter 1</h2>
+    <section class="problem-container">
+      <p>
+        <strong>1.</strong> 
+        Show that $\alpha + \beta = \beta + \alpha$ for all $\alpha, \beta \in \mathbb{C}$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Let $\alpha = a + bi$, where $a, b \in \mathbb{R}$, and $\beta = c + di$, where $c, d \in \mathbb{R}$.
+            Then
+            \[
+              \begin{align*}
+                  \alpha + \beta &= a + bi + c + di \\
+                  &= (a + c) + (b + d)i \\
+                  &= (c + a) + (d + b)i \\
+                  &= c + di + a + bi \\
+                  &= \beta + \alpha.
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>2.</strong> 
+        Show that $(\alpha + \beta) + \lambda = \alpha + (\beta + \lambda)$ for all $\alpha, \beta, \lambda \in \mathbb{C}$
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Let $\alpha = a + bi$, where $a, b \in \mathbb{R}$, and $\beta = c + di$, where $c, d \in \mathbb{R}$, and $\lambda = e + fi$, where $e, f \in \mathbb{R}$.
+            Then
+            \[
+              \begin{align*}
+                  (\alpha + \beta) + \lambda &= (a + c) + (b + d)i + e + fi \\
+                  &= (a + e) + (b + f)i + c + di \\
+                  &= \alpha + (\beta + \lambda).
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section>
+    </section>
+    
+    <section class="problem-container">
+      <p>
+        <strong>3.</strong> 
+        Show that $(\alpha \beta)\lambda = \alpha(\beta\lambda)$ for all $\alpha, \beta, \lambda \in \mathbb{C}$
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Let $\alpha = a + bi$, where $a, b \in \mathbb{R}$, and $\beta = c + di$, where $c, d \in \mathbb{R}$, and $\lambda = e + fi$, where $e, f \in \mathbb{R}$.
+            Then
+            \[
+              \begin{align*}
+                  (\alpha \beta)\lambda &= [(a+bi)(c+di)](e+fi) \\
+                  &= [(ac - bd) + (ad + bc)i](e + fi) \\
+                  &= (ace - bde - adf - bcf) + (ade + bce + acf - dbf)i \\
+                  &= a(ce - df) - b(de + cf) + a(de + cf)i + b(de - cf)i \\
+                  &= a(ce - df + (de + ce)i) - b(de + cf + (de - cf))i \\
+                  &= a[(c+di)(e+fi)] - b[(d+ci)(e+fi)] \\
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section> 
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>4.</strong> 
+        Show that $\lambda(\alpha + \beta) = \lambda \alpha + \lambda \beta$ for all $\alpha, \beta, \lambda \in \mathbb{C}$
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Let $\alpha = a + bi$, where $a, b \in \mathbb{R}$, and $\beta = c + di$, where $c, d \in \mathbb{R}$, and $\lambda = e + fi$, where $e, f \in \mathbb{R}$.
+            Then
+            \[
+              \begin{align*}
+                  \lambda(\alpha + \beta) &= \lambda(a + bi + c + di) \\
+                  &= \lambda(a) + \lambda(b)i + \lambda(c) + \lambda(d)i \\
+                  &= \lambda(a + bi) + \lambda(c + di) \\
+                  &= \lambda \alpha + \lambda \beta.
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section> 
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>5.</strong> 
+        Show that for every $\alpha \in \mathbb{C}$, there exists a unique $\beta \in \mathbb{C}$ such that $\alpha + \beta = 0$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Let $\alpha = a + bi$, where $a, b \in \mathbb{R}$. Then there exists unique numbers $c, d \in \mathbb{R}$ such that $a+c=0$ and $b+d=0$. Namely, $c=-a$ and $d=-b$. Then, the unique number $\beta = -a - bi$ is such that
+            \[
+              \begin{align*}
+                  \alpha + \beta &= (a + bi) + (-a - bi) \\
+                  &= (a - a) + (b - b)i \\
+                  &= 0 + 0i \\
+                  &= 0.
+              \end{align*}
+            \]
+
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section> 
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>6.</strong> 
+        Show that for every $\alpha \in \mathbb{C}$ with $\alpha \neq 0$, there exists a unique $\beta \in \mathbb{C}$ such that $\alpha\beta = 1$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Let $\alpha = a + bi$, where $a, b \in \mathbb{R}$ with $a \neq 0$ or $b \neq 0$. Let $\beta = c + di$, where $c, d \in \mathbb{R}$. Suppose $\alpha\beta = 1$. Then
+            \[
+              \begin{align*}
+                  1 = \alpha\beta &= (a + bi)(c + di) \\
+                  &= (ac - bd) + (ad + bc)i
+              \end{align*}
+            \]
+            that is, $ac - bd = 1$ and $ad + bc = 0$. Therefore, $c = \frac{a}{a^2+b^2}$ and $d = -\frac{b}{a^2+b^2}$. That is, $\beta = \frac{a-bi}{a^2+b^2}$ is the unique number such that $\alpha\beta = 1$.
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section> 
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>7.</strong> 
+        Show that
+        \[
+          \begin{align*}
+              \frac{-1+\sqrt{3}i}{2}
+          \end{align*}
+        \]
+        is a cube root of 1 (meaning that its cube equals 1).
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            \[
+              \begin{align*}
+                  \left(\frac{-1+\sqrt{3}i}{2}\right)^3 &= \frac{(-1+\sqrt{3}i)^3}{8} \\
+                  &= \frac{9 -3\sqrt{3} + 3\sqrt{3} - 1}{8} \\
+                  &= 1
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section> 
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>8.</strong> 
+        Find two distinct square roots of $i$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            We are looking for $x, y \in \mathbb{C}$ such that $x^2 = i$ and $y^2 = i$. Recall that $i = e^{i\pi/2}$. Therefore, 
+            \[
+              \begin{align*}
+              x &= (e^{i\pi/2})^{1/2} \\
+              &= e^{i\pi/4} \\ 
+              &= cos(\pi/4) + i sin(\pi/4)\\
+              &= \frac{1}{\sqrt{2}} + \frac{i}{\sqrt{2}}
+              \end{align*}
+            \]
+            and 
+            \[
+              \begin{align*}
+              y &= -(e^{i\pi/2})^{1/2} \\
+              &= e^{i\pi/4} \\
+              &= -cos(\pi/4) - i sin(\pi/4) \\
+              &= -\frac{1}{\sqrt{2}} - \frac{i}{\sqrt{2}}
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section> 
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>9.</strong> 
+        Find $x\in \mathbb{R}$ such that
+        \[
+          \begin{align*}
+              (4, -3, 1, 7) + 2x = (5, 9, -6, 8)
+          \end{align*}
+        \]
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Let $x = (x_1, x_2, x_3, x_4)$, where $x_1, x_2, x_3, x_4 \in \mathbb{R}$. The resulting equation to solve is
+            \[
+              \begin{align*}
+                  (4, -3, 1, 7) + 2(x_1, x_2, x_3, x_4) = (5, 9, -6, 8).
+              \end{align*}
+            \]
+            That is, we have 4 linear equations:
+            \[
+              \begin{align*}
+                  4 + 2x_1 &= 5 \\
+                  -3 + 2x_2 &= 9 \\
+                  1 + 2x_3 &= -6 \\
+                  7 + 2x_4 &= 8
+              \end{align*}
+            \]
+            Therefore, the unique solution is $x = (\frac{1}{2}, 6, -\frac{7}{2}, \frac{1}{2})$.
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section> 
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>10.</strong> 
+        Explain why there does not exist $\lambda \in \mathbb{C}$ such that
+        \[
+          \begin{align*}
+              \lambda(2 - 3i, 5 + 4i, -6 + 7i) = (12 - 5i, 7 + 22i, -32 - 9i).
+          \end{align*}
+        \]
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Suppose there is, then from the first coordinate, we have
+            \[
+              \begin{align*}
+                  \lambda(2 - 3i) = 12 - 5i &\iff \lambda = \frac{12 - 5i}{2 - 3i} \\
+                  &\iff \lambda = \frac{(12 - 5i)(2 + 3i)}{(2 - 3i)(2 + 3i)} \\
+                  &\iff \lambda = \frac{13(3 + 2i)}{13}\\
+                  &\iff \lambda = 3 + 2i.
+              \end{align*}
+            \]
+            Now, substituting this into the third coordinate, we have
+            \[
+              \begin{align*}
+                  \lambda(-6 + 7i) &= (3 + 2i)(-6 + 7i) \\
+                  &= -18 + 21i - 12i - 14 \\
+                  &= -32 + 9i.
+              \end{align*}
+            \]
+            Which means that the solution for the first and third coordinates are not the same, which is a contradiction.
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section> 
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>11.</strong> 
+        Show that $(x + y) + z = x + (y + z)$ for all $x, y, z \in \mathbb{F}^n$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Let $x = (x_1, x_2, \ldots, x_n)$, $y = (y_1, y_2, \ldots, y_n)$, and $z = (z_1, z_2, \ldots, z_n)$. Then,
+            \[
+              \begin{align*}
+                  (x + y) + z &= (x_1 + y_1, x_2 + y_2, \ldots, x_n + y_n) + (z_1, z_2, \ldots, z_n) \\
+                  &= ((x_1 + y_1) + z_1, (x_2 + y_2) + z_2, \ldots, (x_n + y_n) + z_n) \\
+                  &= (x_1 + (y_1 + z_1), x_2 + (y_2 + z_2), \ldots, x_n + (y_n + z_n)) \\
+                  &= x + (y + z)
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section> 
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>12.</strong> 
+        Show that $(ab)x = a(bx)$ for all $x \in \mathbb{F}^n$ and all $a, b \in \mathbb{F}$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Let $x = (x_1, x_2, \ldots, x_n)$ and $a, b \in \mathbb{F}$. Then,
+            \[
+              \begin{align*}
+                  (ab)x &= (ab)(x_1, x_2, \ldots, x_n) \\
+                  &= ((ab)x_1, (ab)x_2, \ldots, (ab)x_n) \\
+                  &= (a(bx_1), a(bx_2), \ldots, a(bx_n)) \\
+                  &= a(bx)
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section> 
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>13.</strong> 
+        Show that $1x = x$ for all $x \in \mathbb{F}^n$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Let $x = (x_1, x_2, \ldots, x_n)$, then
+            \[
+              \begin{align*}
+                  1x &= 1(x_1, x_2, \ldots, x_n) \\
+                  &= (1x_1, 1x_2, \ldots, 1x_n) \\
+                  &= (x_1, x_2, \ldots, x_n) \\
+                  &= x.
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section> 
+    </section>
+    
+    <section class="problem-container">
+      <p>
+        <strong>14.</strong> 
+        Show that $\lambda(x+y) = \lambda x + \lambda y$ for all $\lambda \in \mathbb{F}$ and all $x, y \in \mathbb{F}^n$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Let $x = (x_1, x_2, \ldots, x_n)$ and $y = (y_1, y_2, \ldots, y_n)$, then
+            \[
+              \begin{align*}
+                  \lambda(x+y) &= \lambda(x_1 + y_1, x_2 + y_2, \ldots, x_n + y_n) \\
+                  &= (\lambda(x_1+y_1), \lambda(x_2+y_2), \ldots, \lambda(x_n+y_n)) \\
+                  &= (\lambda x_1 + \lambda y_1, \lambda x_2 + \lambda y_2, \ldots, \lambda x_n + \lambda y_n) \\
+                  &= (\lambda x_1, \lambda x_2, \ldots, \lambda x_n) + (\lambda y_1, \lambda y_2, \ldots, \lambda y_n) \\
+                  &= \lambda x + \lambda y.
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section> 
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>15.</strong>
+        Show that $(a + b)x = ax + bx$ for all $x \in \mathbb{F}^n$ and all $a, b \in \mathbb{F}$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Let $x = (x_1, x_2, \ldots, x_n)$, then
+            \[
+              \begin{align*}
+                  (a + b)x &= (a + b)(x_1, x_2, \ldots, x_n) \\
+                  &= ((a + b)x_1, (a + b)x_2, \ldots, (a + b)x_n) \\
+                  &= (ax_1 + bx_1, ax_2 + bx_2, \ldots, ax_n + bx_n) \\
+                  &= (ax_1, ax_2, \ldots, ax_n) + (bx_1, bx_2, \ldots, bx_n) \\
+                  &= ax + bx.
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section> 
+    </section>
+
+  </main>
+</body>
+</html>

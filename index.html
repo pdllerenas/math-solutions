@@ -19,6 +19,11 @@
     }
 
     .solutions-list {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .solutions-list ul {
       list-style: none;
       padding: 0;
     }
@@ -49,17 +54,49 @@
 </head>
 <body>
   <h1>Math Solutions</h1>
-  <ul class="solutions-list">
-    <li>
-      <a href="solutions/linear-algebra/1/solutions.html">
-        Linear Algebra Done Right - Chapter 1
-      </a>
-    </li>
-    <li>
-      <a href="solutions/linear-algebra/2/solutions.html">
-        Linear Algebra Done Right - Chapter 2
-      </a>
-    </li>
-  </ul>
+  <div class="solutions-list">
+    <div>
+      <h2>Linear Algebra</h2>
+      <ul>
+        <li>
+          <a href="solutions/linear-algebra/1/solutions.html">
+            Linear Algebra Done Right - Chapter 1
+          </a>
+        </li>
+        <li>
+          <a href="solutions/linear-algebra/2/solutions.html">
+            Linear Algebra Done Right - Chapter 2
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+    <div>
+      <h2>Calculus</h2>
+      <ul>
+        <li>
+          <a href="solutions/calculus/1/solutions.html">
+            Calculus I
+          </a>
+        </li>
+        <li>
+          <a href="solutions/calculus/2/solutions.html">
+            Calculus II
+          </a>
+        </li>
+        <li>
+          <a href="solutions/calculus/2/solutions.html">
+            Calculus III
+          </a>
+        </li>
+        <li>
+          <a href="solutions/calculus/2/solutions.html">
+            Calculus IV
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
 </body>
 </html>

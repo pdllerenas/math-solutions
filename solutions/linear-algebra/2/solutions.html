@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title></title>
+<title>Chapter 2 Solutions</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="dark light">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -86,6 +86,300 @@
         </div>
       </section>
     </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>3.</strong> 
+        Suppose $v, w \in V$. Explain why there exists a unique $x \in V$ such that $v+3x = w$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            We have that $v + (3x - w) = 0$, so $3x - w$ is the additive inverse of $v$. Since $V$ is a vector space, this additive inverse is unique. Since $w$ is fixed, then $x$ must be unique. More explicitly, suppose there is another $x'$ such that $v + 3x' = w$. Then
+            \[
+              \begin{align*}
+                  3x &= 3x + v + (-v)\\
+                  &= (3x + v) + (3x' - w)\\
+                  &= w + 3x' - w\\
+                  &= 3x'.
+              \end{align*}
+            \]
+            Therefore, $x = x'$.
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>4.</strong> 
+        The empty set is not a vector space. The empty set fails to satisfy only one of the requirements listed in the definition of a vector space (1.20). Which one?
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            By definition, the empty set has no elements. Therefore, an additive identity cannot exist, as it requests the existence of an element.
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>5.</strong> 
+        Show that in the definition of a vector space (1.20), the additive inverse condition can be replaced with the condition that
+        \[
+          0v = 0 \text{ for all } v \in V.
+        \]
+        Here the 0 on the left side is the number 0, and the 0 on the right side is the additive identity of V.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            We have that
+            \[
+              \begin{align*}
+                  0v &= (0v_1, \ldots, 0v_n) \\
+                  &= (0, \ldots, 0) \\
+                  &= 0.
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>6.</strong> 
+        Let $\infty$ and $-\infty$ denote two distinct objects, neither of which is in $\mathbb{R}$. Define an addition and scalar multiplication on $\mathbb{R} \cup \{\infty, -\infty\}$ as you could guess from the notation. Specifically, the sum and product of two real numbers as usual, and for $t \in \mathbb{R}$ define 
+        <div class="split">
+          <span>
+            \[
+            t\infty = 
+            \begin{cases}
+                -\infty & \text{ if } t < 0 \\
+                0 & \text{ if } t = 0 \\
+                \infty & \text{ if } t > 0
+            \end{cases}
+          \]
+          </span>
+          <span>
+            \[
+            t(-\infty) = 
+            \begin{cases}
+                \infty & \text{ if } t < 0 \\
+                0 & \text{ if } t = 0 \\
+                -\infty & \text{ if } t > 0
+            \end{cases}
+          \]
+          </span>
+        </div>
+        and
+        \[
+          \begin{align*}
+              t + \infty &= \infty + t = \infty + \infty = \infty \\
+              t + (-\infty) &= (-\infty) + t = (-\infty) + (-\infty) = -\infty\\
+              \infty + (-\infty) &= -\infty + \infty = 0.
+          \end{align*}
+        \]
+        With these operations of addition and scalar multiplication, is $\mathbb{R} \cup \{\infty, -\infty\}$ a vector space over $\mathbb{R}$? Explain.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            It does not satisfy associativity: let $t\in \mathbb{R}$, then
+            \[
+              \begin{align*}
+                  (t + -\infty) + \infty = -\infty + \infty = 0,
+              \end{align*}
+            \]
+            but
+            \[
+              \begin{align*}
+                  t + (\infty + -\infty) = t + 0 = t.
+              \end{align*}
+            \]
+            That is,
+            \[
+              \begin{align*}
+                (t + -\infty) + \infty \neq t + (\infty + -\infty).
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>7.</strong> 
+        Suppose $\mathcal{S}$ is a nonempty set. Let $V^{S}$ denote the set of functions from $\mathcal{S}$ to $V$. Define a natural addition and scalar multiplication on $V^{S}$, and show that $V^{S}$ is a vector space with these definitions.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            Let $f, g \in V^{S}$, then
+            \[
+              \begin{align*}
+                  (f + g)(x) &= f(x) + g(x)
+              \end{align*}
+            \]
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p>
+        <strong>8.</strong> 
+        Suppose $V$ is a real vector space.
+        <ul>
+          <li>
+            The <i>complexification</i> of $V$, denoted by $V_{\mathbb{C}}$, equals $V \times V$. An element of $V_{\mathbb{C}}$ is an ordered pair $(u, v)$, where $u, v \in V$, but we write this as $u + iv$.
+          </li>
+          <li>
+            Addition on $V_{\mathbb{C}}$ is defined by 
+            \[
+              \begin{align*}
+                  (u_1 + iv_1) + (u_2 + iv_2) &= (u_1 + u_2) + i(v_1 + v_2)
+              \end{align*}
+            \]
+            for all $u_1, u_2, v_1, v_2 \in V$.
+          </li>
+          <li>
+            Complex scalar multiplication on $V_{\mathbb{C}}$ is defined by 
+            \[
+              \begin{align*}
+                  (a + bi)(u + iv) &= (au - bv) + i(av + bu)
+              \end{align*}
+            \]
+            for all $a, b \in \mathbb{R}$ and $u, v \in V$.
+          </li>
+        </ul>
+        Prove that with the definitions of addition and scalar multiplcation as above, $V_{\mathbb{C}}$ is a vector space.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            <ul>
+              <li>
+                commutativity: let $x = u_1 + iv_1$ and $y = u_2 + iv_2$ for $u_1, u_2, v_1, v_2 \in V$, then
+                \[
+                  \begin{align*}
+                      x + y &= (u_1 + iv_1) + (u_2 + iv_2) \\
+                       &= (u_1 + u_2) + i(v_1 + v_2) \\
+                       &= (u_2 + u_1) + i(v_2 + v_1)\\
+                       &= (u_2 + iv_2) + (u_1 + iv_1)\\
+                       &= y + x.
+                  \end{align*}
+                \]
+              </li>
+              <li>
+                associativity: let $x = u_1 + iv_1$ and $y = u_2 + iv_2$ and $z = u_3 + iv_3$ for $u_1, u_2, v_1, v_2, u_3, v_3 \in V$, then
+                \[
+                  \begin{align*}
+                      (x + y) + z &= (u_1 + u_2) + i(v_1 + v_2) + (u_3 + iv_3) \\
+                       &= (u_1 + u_2 + u_3) + i(v_1 + v_2 + v_3) \\
+                       &= (u_1 + (u_2 + u_3)) + i(v_1 + (v_2 + v_3)) \\
+                       &= x + (y + z).
+                  \end{align*}
+                \]
+                Moreover, for $a,b \in \mathbb{R}$ we have
+                \[
+                  \begin{align*}
+                      (ab)x &= (ab)(u_1 + iv_1) \\
+                       &= abu_1 + i abv_1 \\
+                       &= a(bu_1) + i(a(bv_1)) \\
+                       &= a(b(u_1 + iv_1)) \\
+                       &= a(bx).
+                  \end{align*}
+                \]
+              </li>
+              <li>
+                additive identity: the element $(0 + 0i) \in V_{\mathbb{C}}$ is the additive identity of $V_{\mathbb{C}}$.
+              </li>
+              <li>
+                additive inverse: let $x = u + iv$ for $u, v \in V$, then $-u, -v \in V$, and thus
+                \[
+                  \begin{align*}
+                      -x = -(u + iv) \in V_{\mathbb{C}}
+                  \end{align*}
+                \]
+              </li>
+              <li>
+                multplicative identity: the element $(1 + 0i) \in V_{\mathbb{C}}$ is the multiplicative identity of $V_{\mathbb{C}}$.
+              </li>
+              <li>
+                distributive properties: let $x = u_1 + iv_1$ and $y = u_2 + iv_2$ for $u_1, u_2, v_1, v_2 \in V$ and $a, b \in \mathbb{R}$, then
+                \[
+                  \begin{align*}
+                      a(x + y) &= a[(u_1 + u_2) + i(v_1 + v_2)] \\
+                      &= a(u_1 + u_2) + i(a(v_1 + v_2)) \\
+                      &= a(u_1) + i(a(v_1)) + a(u_2) + i(a(v_2)) \\
+                      &= a(u_1 + iv_1) + a(u_2 + iv_2) \\
+                      &= ax + ay.
+                  \end{align*}
+                \]
+                Furthermore, we have
+                \[
+                  \begin{align*}
+                      (a + b)x &= (a + b)(u_1 + iv_1) \\
+                      &= (a+b)u_1 + (a + b)iv_1 \\
+                      &= au_1 + bu_1 + iav_1 + ibv_1 \\
+                      &= a(u_1 + iv_1) + b(u_1 + iv_1) \\
+                      &= ax + bx.
+                  \end{align*}
+                \]
+              </li>
+            </ul>
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section>
+    </section>
+
   </main>
 </body>
 </html>

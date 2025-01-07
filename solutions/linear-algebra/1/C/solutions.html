@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chapter 1 C Solutions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+  <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        },
+    };
+  </script>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>  
+  <header>
+    <h1>
+      Solutions to some of the exercises in Sheldon Axler's <i>Linear Algebra Done Right</i> (4th edition).
+    </h1>
+  </header>
+  <main>
+    <h2>Chapter 1 C</h2>
+    <section class="problem-container">
+      <p>
+        <strong>1.</strong>
+        For each of the following subsets of $\mathbb{F}^{3}$, determine whether it is a subspace of $\mathbb{F}^{3}$.
+      <ol class="parenthesis-list">
+          <li>$A = \left\{(x_1, x_2, x_3 ) \in \mathbb{F}^3 : x_1 + 2x_2 + 3x_3 = 0\right\}$</li>
+          <li>$B = \left\{(x_1, x_2, x_3 ) \in \mathbb{F}^3 : x_1 + 2x_2 + 3x_3 = 4\right\}$</li>
+          <li>$C = \left\{(x_1, x_2, x_3 ) \in \mathbb{F}^3 : x_1x_2x_3 = 0\right\}$</li>
+          <li>$D = \left\{(x_1, x_2, x_3 ) \in \mathbb{F}^3 : x_1 = 5x_3\right\}$</li>
+        </ol>
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">
+            Proof.
+          </span>
+          <span class="argument">
+            <ol class="parenthesis-list">
+              <li>
+                It is indeed a subspace, as $(0,0,0) \in A$, it is closed under addition, as for any $(x_1, x_2, x_3) \in A$ and $(y_1, y_2, y_3) \in A$,
+                \[
+                  x_1 + 2x_2 + 3x_3 = 0 = y_1 + 2y_2 + 3y_3,
+                \]
+                which is equivalent to
+                \[
+                  x_1 + y_1 + 2(x_2 + y_2) + 3(x_3 + y_3) = 0.
+                \]
+                That is, $(x_1 + y_1, x_2 + y_2, x_3 + y_3) \in A$. Finally, it is closed under scalar multiplication, as for any $(x_1, x_2, x_3) \in A$ and $\lambda \in \mathbb{F}$,
+                \[
+                  \begin{align*}
+                      \lambda x_1 + 2\lambda x_2 + 3\lambda x_3 &= \lambda(x_1 + 2x_2 + 3x_3) \\ &= \lambda(0)\\ &= 0 \\
+                  \end{align*}
+                \]
+                therefore, $\lambda(x_1, x_2, x_3) = (\lambda x_1, \lambda x_2, \lambda x_3) \in A$.
+              </li>
+              <li>
+                It is not a subspace, as $(0,0,0) \notin B$.
+              </li>
+              <li>
+                It is not a subspace, as we may take $(1, 0, 0)$ and $(0, 1, 1)$, both elements of $C$, but $(1, 0, 0) + (0, 1, 1) = (1, 1, 1) \notin C$, so $C$ is not closed under addition.
+              </li>
+              <li>
+                Its elements are of the form $(5x_3, x_2, x_3)$, so $(0,0,0) \in D$, it is closed under addition, as 
+                \[
+                  (5x_3, x_2, x_3) + (5y_3, y_2, y_3) = (5(x_3 + y_3), x_2 + y_2, x_3 + y_3) \in D.
+                \]
+                Finally, it is closed under scalar multiplication, as for any $(x_1, x_2, x_3) \in D$ and $\lambda \in \mathbb{F}$, \[\lambda(x_1, x_2, x_3) = (5(\lambda x_3), \lambda x_2, \lambda x_3) \in D.\]
+              </li>
+
+            &nbsp;
+          </span>
+          <span class="qed">
+            $\square$
+          </span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>2.</strong>
+        Verify all assertions about subspaces in Example 1.35.</p>
+        <ol class="parenthesis-list">
+          <li>If $b \in \mathbb{F}$, then
+            \[A = \{(x_1, x_2, x_3, x_4) \in \mathbb{F}^4 : x_3 = 5x_4 + b\}\]
+            is a subspace of $\mathbb{F}^4$ if and only if $b = 0$.</li>
+            <section class="proof">
+              <div class="proof-content">
+                <span class="proof-title">Proof.</span>
+                <span class="argument">&nbsp;
+                    It is clear that $(0,0,0,0) \in A$ if and only if $b=0$. If it is closed under addition, then for any $(x_1, x_2, x_3, x_4) \in A$ and $(y_1, y_2, y_3, y_4) \in A$ we have
+                    \[
+                      5(x_4 + y_4) + b = x_3 + y_3 = 5(x_4 + y_4) + 2b
+                    \]
+                    which is equivalent to $b = 0$. If it is closed under scalar multiplication, then for any $(x_1, x_2, x_3, x_4) \in A$ and $\lambda \in \mathbb{F}$ we have 
+                    \[
+                      5(\lambda x_4) + b = \lambda x_3 = 5\lambda x_4 + \lambda b
+                    \]
+                    which is equivalent to $b = 0$.
+                </span>
+                <span class="qed">$\square$</span>
+              </div>
+            </section>
+            <li>
+              The set of continuous real-valued functions on the interval $[0,1]$ is a subspace of $\mathbb{R}^{[0,1]}$
+            </li>
+            <section class="proof">
+              <div class="proof-content">
+                <span class="proof-title">Proof.</span>
+                <span class="argument">&nbsp;
+                    It is clearly a subset. The $0$ function is continuous, the addition of continuous functions is continuous, and scalar multiplication is continuous.
+                </span>
+                <span class="qed">$\square$</span>
+              </div>
+            </section>
+            <li>
+              The set of differentiable real-valued functions on $\mathbb{R}$ is a subspace of $\mathbb{R}^{\mathbb{R}}$.
+            </li>
+            <section class="proof">
+              <div class="proof-content">
+                <span class="proof-title">Proof.</span>
+                <span class="argument">&nbsp;
+                    It is clearly a subset. The $0$ function is differentiable, the addition of differentiable functions is differentiable, and scalar multiplication is differentiable. 
+                </span>
+                <span class="qed">$\square$</span>
+              </div>
+            </section>
+            <li>
+              The set of differentiable real-valued functions $f$ on the interval $(0, 3)$ such that $f'(2) = b$ is a subspace of $\mathbb{R}^{(0,3)}$ if and only if $b = 0$.
+            </li>
+            <section class="proof">
+              <div class="proof-content">
+                <span class="proof-title">Proof.</span>
+                <span class="argument">&nbsp;
+                    The 0 function is in this set if and only if $b = 0$. For closed additivity, let $f, g$ be differentiable functions on the interval $(0, 3)$ such that $f'(2) = g'(2) = b$. Then
+                    \[
+                      b = (f+g)'(2) = f'(2) + g'(2) = b + b = 2b
+                    \]
+                    and thus $b = 0$. For closed scalar multiplication, we have
+                    \[
+                      b = (\lambda f)'(2) = \lambda f'(2) = \lambda b
+                    \]
+                    and thus $b = 0$.
+                </span>
+                <span class="qed">$\square$</span>
+              </div>
+            </section>
+
+            <li>
+              The set of all sequences of complex numbers with limit 0 is a subspace of $\mathbb{C}^\infty$.
+            </li>
+            <section class="proof">
+              <div class="proof-content">
+                <span class="proof-title">Proof.</span>
+                <span class="argument">&nbsp;
+                    The sequence 0 (that is, the constant sequence with limit 0) is in the set. For closed addition, let $a, b$ be sequences of complex numbers with limit 0. Then
+                    \[
+                      \lim_{n \to \infty} (a_n + b_n) = \lim_{n \to \infty} a_n + \lim_{n \to \infty} b_n = 0 + 0 = 0
+                    \]
+                    and thus $a + b$ has limit 0. For closed scalar multiplication, let $a$ be a sequence of complex numbers with limit 0 and $\lambda \in \mathbb{C}$. Then
+                    \[
+                    \begin{align*}
+                      \lim_{n \to \infty} (\lambda a_n) &= \lim_{n \to \infty} \lambda a_n\\ &= \lambda \lim_{n \to \infty} a_n\\ &= \lambda \cdot 0 = 0
+                    \end{align*}
+                    \]
+                    and thus $(\lambda a)$ has limit 0.
+                </span>
+                <span class="qed">$\square$</span>
+              </div>
+            </section>
+        </ol>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>3.</strong>
+        Show that the set of differentiable real-valued functions $f$ on the interval $(-4, 4)$ such that $f'(-1) = 3f(2)$ is a subspace of $\mathbb{R}^{(-4,4)}$</p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">
+            The 0 function is clearly in this set. For closed additivity, let $f, g$ be differentiable functions on the interval $(-4, 4)$ such that $f'(-1) = 3f(2)$ and $g'(-1) = 3g(2)$. Then'
+            \[
+              \begin{align*}
+              (f+g)'(-1) &= f'(-1) + g'(-1) \\ &= 3f(2) + 3g(2) \\ &= 3(f+g)(2).
+              \end{align*}
+            \]
+            For closed scalar multiplication, let $f$ be a differentiable function on the interval $(-4, 4)$ such that $f'(-1) = 3f(2)$ and $\lambda \in \mathbb{R}$. Then
+            \[
+              \begin{align*}
+              (\lambda f)'(-1) &= \lambda f'(-1) \\ &= \lambda \cdot 3f(2) \\ &= 3(\lambda f(2)).
+              \end{align*}
+            \]
+            &nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>4.</strong>
+        Suppose $b \in \mathbb{R}$. Show that the set of continuous real-valued functions $f$ on
+        the interval $[0, 1]$ such that $\int_0^1 f = b$ is a subspace of $\mathbb{R}^{[0,1]}$ if and only if
+        $b = 0$.</p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">
+            For $f = 0$ we have 
+            \[
+              \int_0^1 0 = 0,
+            \]
+            so $b = 0$. For closed additivity, let $f, g$ be continuous functions on the interval $[0, 1]$ such that $\int_0^1 f = \int_0^1 g = b$. Then
+            \[
+            \begin{align*}
+              b &= \int_0^1 (f+g)\\ &= \int_0^1 f + \int_0^1 g\\ &= \int_0^1 f + \int_0^1 g\\ &= 2b.
+              \end{align*}
+            \]
+            Therefore, $b = 0$. For closed scalar multiplication, let $f$ be a continuous function on the interval $[0, 1]$ such that $\int_0^1 f = b$. Then
+            \[
+            \begin{align*}
+            b &=\int_0^1 (\lambda f)\\ &= \lambda \int_0^1 f\\ &= \lambda b.
+            \end{align*}
+            \]
+            Therefore, $b = 0$.
+            &nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>5.</strong>
+        Is $\mathbb{R}^2$ a subspace of the complex vector space $\mathbb{C}^2$?</p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">
+            No, scalar multiplication is not closed, as one may take $i\in \mathbb{C}$ and any vector in $\mathbb{R}^2$, but their product is not in $\mathbb{R}^2$.
+            &nbsp;
+          </span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>6.</strong>
+      <ol class="parenthesis-list">
+        <li>Is $\{(a, b, c) \in \mathbb{R}^3 : a^3 = b^3\}$ a subspace of $\mathbb{R}^3$</li>
+        <li>Is $\{(a, b, c) \in \mathbb{C}^3 : a^3 = b^3\}$ a subspace of $\mathbb{C}^3$?</li>
+      </ol>
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">
+            <ol class="parenthesis-list">
+              <li>Yes. In $\mathbb{R}^3$, $a^3 = b^3$ implies $a = b$. This makes the statement obvious.</li>
+              <li>No. We simply take the roots of unity (two suffice): 1 and $-e^{i\pi/3} = -\frac{1}{2} - \frac{\sqrt{3}}{2}i$. Then, take $(1, -e^{i\pi/3}, -1)$ and $(1, 1, -1)$. Then,
+                \[
+                  (1, -e^{i\pi/3}, -1) + (1, 1, -1) = (2, 1 - e^{i\pi/3}, -2),
+                \]
+                but
+                \[
+                  2^3 = 8 \neq -1 = (1-e^{i\pi/3})^3.
+                \]
+              </li>
+            </ol>
+            &nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>7.</strong>
+        Prove or give a counterexample: If $U$ is a nonempty subset of $\mathbb{R}^2$ such that
+        $U$ is closed under addition and under taking additive inverses (meaning
+        $-u \in U$ whenever $u \in U$), then $U$ is a subspace of $\mathbb{R}^2$.</p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">Counterexample:
+            \[
+              U = \mathbb{Z}^2.
+            \]
+            It satisfies the given conditions, but does not satisfy closed scalar multiplication, as one may take $u = (1, 1)$ and $\lambda = 1/2$, but $(\frac{1}{2}, \frac{1}{2}) \notin U$.
+             &nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>8.</strong>
+        Give an example of a nonempty subset $U$ of $\mathbb{R}^2$ such that $U$ is closed under scalar multiplication, but $U$ is not a subspace of $\mathbb{R}^2$.
+        </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">
+            Let $U = \{(x, y) \in \mathbb{R}^2 : x = 0 \text{ or } y = 0\}$. That is, the $x$ and $y$ axes. It is nonempty, and closed under scalar multiplication. But one may take $(1, 0)$ and $(0, 1)$, both in $U$, but $(1,1) \notin U$.
+            &nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>9.</strong>A function $f: \mathbb{R} \to \mathbb{R}$ is called periodic if there exists a positive number $p$ such that $f(x) = f(x + p)$ for all $x \in \mathbb{R}$. Is the set of periodic functions from $\mathbb{R}$ to $\mathbb{R}$ a subspace of $\mathbb{R}^{\mathbb{R}}$? Explain.</p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">
+            Taking $f(x) = \sin(2\pi x)$
+            &nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>10.</strong>
+        Suppose $V_1$ and $V_2$ are subspaces of $V$. Prove that the intersection $V_1 \cap V_2$ is a subspace of $V$.
+        </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>11.</strong>
+        Prove that the intersection of every collection of subspaces of $V$ is a subspace
+        of $V$.</p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>12.</strong>
+        Prove that the union of two subspaces of $V$ is a subspace of $V$ if and only if
+        one of the subspaces is contained in the other.</p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>13.</strong>
+        Prove that the union of three subspaces of $V$ is a subspace of $V$ if and only
+        if one of the subspaces contains the other two.</p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>14.</strong>
+        Suppose 
+        \[
+          \begin{align*}
+            U = \{(x, -x, 2x) \in \mathbb{F}^3 : x \in \mathbb{F}\} \quad \text{and} \quad W = \{(x, x, 2x) \in \mathbb{F}^3 : x \in \mathbb{F}\}.
+          \end{align*}
+        \]
+        Describe $U + W$ using symbols, and also give a description of $U + W$ that uses no symbols.
+        </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>15.</strong>
+        Suppose $U$ is a subspace of $V$. What is $U + U$?</p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>16.</strong>
+        Is the operation of addition on the subspaces of $V$ commutative? In other
+        words, if $U$ and $W$ are subspaces of $V$, is $U + W = W + U$?
+        </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>17.</strong>
+        Is the operation of addition on the subspaces of $V$ associative? In other
+        words, if $V_1$, $V_2$, $V_3$ are subspaces of $V$, is
+        \[
+          (V_1 + V_2) + V_3 = V_1 + (V_2 + V_3)?
+        \]
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>18.</strong>
+        Does the operation of addition on the subspaces of $V$ have an additive
+        identity? Which subspaces have additive inverses?
+        </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>19.</strong>
+        Prove or give a counterexample: If $V_1$, $V_2$, $U$ are subspaces of $V$ such that
+        \[
+          V_1 + U = V_2 + U,
+        \]
+        then $V_1 = V_2$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>20.</strong>Suppose
+      \[
+        U = \{(x, x, y, y) \in \mathbb{F}^4 : x, y \in \mathbb{F}\}
+      \]
+      Find a subspace $W$ of $\mathbb{F}^4$ such that $\mathbb{F}^4 = U \oplus W$.
+      </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>21.</strong>Suppose
+      \[
+        U = \{(x, y, x + y, x - y, 2x) \in \mathbb{F}^5 : x, y \in \mathbb{F}\}
+      \]
+      Find a subspace $W$ of $\mathbb{F}^5$ such that $\mathbb{F}^5 = U \oplus W$.</p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>22.</strong>Suppose 
+      \[
+        U = \{(x, y, x + y, x - y, 2x) \in \mathbb{F}^5 : x, y \in \mathbb{F}\}
+      \]
+      Find three subspaces $W_1$, $W_2$, $W_3$ of $\mathbb{F}^5$, none of which equals $\{0\}$, such that
+      $\mathbb{F}^5 = U \oplus W_1 \oplus W_2 \oplus W_3$.</p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>23.</strong>Prove or give a counterexample: If $V_1$, $V_2$, $U$ are subspaces of $V$ such that
+        \[
+          V = V_1 \oplus U \quad \text{and} \quad V = V_2 \oplus U,
+        \]
+        then $V_1 = V_2$.</p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="problem-container">
+      <p><strong>24.</strong>
+        A function $f: \mathbb{R} \to \mathbb{R}$ is called <i>even</i> if
+        \[
+          f(-x) = f(x)
+        \]
+        for all $x \in \mathbb{R}$. A function $f: \mathbb{R} \to \mathbb{R}$ is called <i>odd</i> if
+        \[
+          f(-x) = -f(x)
+        \]
+        for all $x \in \mathbb{R}$. Let $V_e$ denote the set of real-valued even functions on $\mathbb{R}$
+        and let $V_o$ denote the set of real-valued odd functions on $\mathbb{R}$. Show that
+        $\mathbb{R}^{\mathbb{R}} = V_e \oplus V_o$.</p>
+        </p>
+      <section class="proof">
+        <div class="proof-content">
+          <span class="proof-title">Proof.</span>
+          <span class="argument">&nbsp;</span>
+          <span class="qed">$\square$</span>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
